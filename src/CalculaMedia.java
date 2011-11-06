@@ -5,9 +5,9 @@ public class CalculaMedia {
 	public static void main(String[] args) throws CalculaMediaException{
 		Scanner entrada = new Scanner(System.in);
 		
-		System.out.print("Digite a quantidade de funcion�rios: ");
+		System.out.print("Digite a quantidade de funcionários: ");
 		String quantidadeFunc = entrada.nextLine();
-		System.out.print("Digite os sal�rios dos funcion�rios: ");
+		System.out.print("Digite os salários dos funcionários: ");
 		String todosSalarios = entrada.nextLine();
 		
 		String[] salariosSeparados = todosSalarios.split(",");
@@ -17,9 +17,9 @@ public class CalculaMedia {
 			salarios[i]  = Double.parseDouble(salariosSeparados[i]);
 		}
 		try {
-			System.out.println("M�dia salarial: "+salario(Integer.parseInt(quantidadeFunc), salarios));
+			System.out.println("Média salarial: "+salario(Integer.parseInt(quantidadeFunc), salarios));
 		}catch(CalculaMediaException e){
-			System.out.println("A quantidade de funcion�rios não corresponde à quantidade de sal�rios!");
+			System.out.println("A quantidade de funcionários não corresponde à quantidade de salários!");
 		}
 		
 	}
@@ -28,7 +28,7 @@ public class CalculaMedia {
 		double media = 0;
 		
 		if(salarios.length != quantidadeFunc ){
-			throw new CalculaMediaException("A quantidade de funcion�rios não corresponde à quantidade de sal�rios!");
+			throw new CalculaMediaException("A quantidade de funcionários não corresponde à quantidade de salários!");
 		}else{
 			for(int i = 0; i < salarios.length; i++){
 			media = Math.round(media + salarios[i] / quantidadeFunc);
